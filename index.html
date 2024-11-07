@@ -17,15 +17,14 @@
     <div class="container">
         <div class="letterEntry">
             <form class="letter">
-                <label>Filter by first name</label>
-                <input type="text" id="letterIQ" maxlength="1" placeholder="Filter by first letter" />
-                <button id="filterFirst" type="submit">Filter First Initial</button>
-                <button id="filterLast" type="submit">Filter Last Initial</button>
+                <label>Filter by name</label>
+                <input type="text" id="letterIQ" placeholder="Filter name" />
+                <button id="filterFirst" type="submit">Filter</button>
                 <button id="clear" type="reset">Clear</button>
-                <br>
+                <!-- <br>
                 <br>
                 <button class="Annual">Sort by Annual Income</button>
-                <button class="Hourly">Sort by Pay Rate</button>
+                <button class="Hourly">Sort by Pay Rate</button> -->
             </form>
         </div>
         <div id="filterButtons">
@@ -50,8 +49,7 @@
         <table id="payrollTable">
             <thead id="tableHeading">
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Name</th>
                     <th>Job Title</th>
                     <th id="variable">Annual Salary</th>
                     <th>Agency</th>
