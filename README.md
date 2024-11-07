@@ -1,31 +1,29 @@
 ## **Project Overview**
 
-- Briefly describe the concept of your project.
+Our project collects payroll data from NYC public employees, allowing users to sort, search, and interact with the data.
 
 ## **Project Members**
 
-- List the people a part of this group.
+- Aron Ashurov
+- Massimo Viviano
 
 ## **Features**
 
-- List the key features of the project (the three distinct types of user interactions).
+Users can sort by first initial, last initial, annual pay, hourly pay, and by borough.
+Sorting by borough displays the number of people, highest salary, lowest salary, and the mean income.
 
 ## **Technologies Used**
 
-- List the technologies and tools used in the project:
-    - APIs
-    - Libraries
-    - Other
+We utilized API data from the NYC Open Data program, the GSAP library for animaitons, and Google Fonts.
  
 ## **Live Demo**
 
-- Include a link to the live version of the project hosted on Glitch.
+https://buttered-sophisticated-dimple.glitch.me/
 
 ## **Credits**
 
-- List any third-party assets used in the project (e.g., sound effects, images, fonts) and provide proper attribution.
-- Acknowledge any resources, tutorials, or references you used to help complete the project.
+Google Fonts were used in the making of this project.
 
 ## **Future Enhancements**
 
-- List any future enhancements you would like to make or improve given more time.
+Given more time, additional visual work, sorting features, or presentation options (such as graphs) would elevate the project. 
