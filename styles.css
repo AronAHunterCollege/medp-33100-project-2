@@ -1,0 +1,114 @@
+body {
+    margin: auto;
+    font-family: 'Comfortaa', sans-serif;
+    justify-content: center;
+    background: rgb(5, 10, 20);
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+th {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+#filterButtons {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+button {
+    font-family: 'Comfortaa', sans-serif;
+    padding: 7px 16px;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    color: rgba(24, 28, 40);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+table {
+    justify-content: center;
+    justify-self: center;
+    border-radius: 5px;
+    background-color: rgba(24, 28, 40);
+}
+
+p {
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.container {
+    display: grid;
+    height: fit-content;
+    grid-template-columns: 25% auto 25%;
+    grid-template-rows: min-content 1fr min-content;
+    padding: 10px;
+    margin: auto;
+    row-gap: 20px;
+    column-gap: 40px;
+}
+
+#payrollTable {
+    grid-column: 2/3;
+    grid-row: span 3;
+}
+
+.letterEntry {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#minMaxMean {
+    background-color: rgba(24, 28, 40);
+    grid-column: 1/2;
+    grid-row: 2/3;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#filterButtons {
+    grid-column: 1/2;
+    grid-row: span 1;
+
+}
+
+.wipe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 10;
+}
+
+.dissolve {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+}
+
+.circle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
