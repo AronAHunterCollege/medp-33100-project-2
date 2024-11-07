@@ -13,11 +13,11 @@ function dissolveAnim(color) {
     const timeline = gsap.timeline();
     timeline.to(dissolveDiv, {
         opacity: 1,
-        duration: 1,
+        duration: 0.2,
         onComplete: () => {
             gsap.to(dissolveDiv, {
                 opacity: 0,
-                duration: 2,
+                duration: 3,
                 onComplete: () => {
                     document.body.removeChild(dissolveDiv)
                 }
@@ -77,10 +77,11 @@ function appendToTable(object) {
 
 // Filter and sort functions
 function sortByLastName(letter) {
+    dissolveAnim('rgb(0, 0, 25)')
     const test = letter;
     const upper = test.toUpperCase()
     document.getElementById("tableBody").innerHTML = "";
-    people_data_object.forEach(item => {
+    people_data_object.data.forEach(item => {
         if (item.last_name && item.last_name[0] === upper) {
             appendToTable(item);
         }
@@ -100,6 +101,7 @@ function sortByFirstName(letter) {
 }
 
 function sortByAnnual() {
+    dissolveAnim('rgb(0, 0, 25)')
     document.getElementById("tableBody").innerHTML = "";
     people_data_object.data.forEach(item => {
         if (item.pay_basis === 'per Annum') {
@@ -109,6 +111,7 @@ function sortByAnnual() {
 }
 
 function sortByHourly() {
+    dissolveAnim('rgb(0, 0, 25)')
     document.getElementById("tableBody").innerHTML = "";
     people_data_object.data.forEach(item => {
         if (item.pay_basis === 'per Hour') {
@@ -167,8 +170,8 @@ function FilterByBorough(boroughName) {
     document.querySelector(".borough").innerHTML = "Filtered Borough: " + boroughName;
     document.querySelector(".min").innerHTML = "Lowest Paid: $" + min;
     document.querySelector(".max").innerHTML = "Highest Paid: $" + max;
-    document.querySelector(".mean").innerHTML = "Mean Salary: $" + meanSalary / totalPeople;
-    document.querySelector(".candidates").innerHTML = "People Averaged: $" + totalPeople;
+    document.querySelector(".mean").innerHTML = "Mean Salary: $" + (meanSalary / totalPeople).toFixed(2)
+    document.querySelector(".candidates").innerHTML = "People Averaged: " + totalPeople;
     document.getElementById("tableBody").innerHTML = "";
     if (boroughName == "ALL") {
         people_data_object.data.forEach(person => {
@@ -232,15 +235,27 @@ document.querySelector('.Brooklyn').addEventListener("click", () => FilterByBoro
 document.querySelector('.Queens').addEventListener("click", () => FilterByBorough('QUEENS'));
 document.querySelector('.Manhattan').addEventListener("click", () => FilterByBorough('MANHATTAN'));
 document.querySelector('.Bronx').addEventListener("click", () => FilterByBorough('BRONX'));
+document.querySelector('.Annual').addEventListener("click", () => sortByAnnual());
+document.querySelector('.Hourly').addEventListener("click", () => sortByHourly());
+
 
 let letterIQ = document.getElementById("letterIQ"); //Input field
-let filter = document.getElementById("filter");//submit button
+let filterFirst = document.getElementById("filterFirst");//submit button
+let filterLast = document.getElementById("filterLast");
 let letter = "";
-filter.addEventListener('click', (event) => {
+filterFirst.addEventListener('click', (event) => {
     event.preventDefault();
     letter = letterIQ.value.trim();
     sortByFirstName(letter);
 })
+filterLast.addEventListener('click', (event) => {
+    event.preventDefault();
+    letter = letterIQ.value.trim();
+    sortByLastName(letter);
+})
+
+
+
 
 document.getElementById('clear').addEventListener('click', (event) => {
     dissolveAnim('rgb(0, 0, 25)')

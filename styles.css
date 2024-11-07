@@ -22,6 +22,7 @@ th {
 button {
     font-family: 'Comfortaa', sans-serif;
     padding: 7px 16px;
+    margin: auto;
     background-color: white;
     border-radius: 5px;
     border: none;
